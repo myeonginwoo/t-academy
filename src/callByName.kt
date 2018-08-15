@@ -12,8 +12,6 @@ fun main(args: Array<String>) {
     // "callByName"
     doCallByName(false, callByName())
     // ""
-
-
 }
 
 fun doCallByName(condtion: Boolean, callByName: () -> String) {
