@@ -1,11 +1,12 @@
 fun main(args: Array<String>) {
 
     val list = listOf(1, 2, 3, 4, 5, 6)
+    val list1 = listOf("a", "b", "c", "d", "e", "f")
 
-    println(list.foldRight(0) { value, acc -> acc - value })
-    // 21
-    println(list.fold(0) { acc, value -> acc - value })
-    // 21
+    println(list1.foldRight("") { value, acc -> acc + value })
+    // fedcba
+    println(list1.fold("") { acc, value -> acc + value })
+    // abcdef
     println(list.foldRight(0) { value, acc -> acc + value })
     // 21
     println(list.fold(0) { acc, value -> acc + value })
