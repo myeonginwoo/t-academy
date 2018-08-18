@@ -1,18 +1,20 @@
 fun main(args: Array<String>) {
 
-    val list = listOf(1, 212, 523, 4, 325, 6, 100, 50, 23, 3231, 232, 25235, 1231, 521)
+    val list = listOf(
+        Person("myeongin", 33, false),
+        Person("wow", 20, true),
+        Person("java", 60, true),
+        Person("lazysoul", 10, false),
+        Person("fp", 22, true),
+        Person("kotlin", 35, false),
+        Person("scala", 42, true),
+        Person("t-academy", 40, true)
+    )
 
-    require(getMaxValue(list, list.first()) == 25235)
+    val result = TODO()
+
+    require(result == listOf("java", "scala", "t-academy"))
 
 }
 
-tailrec fun getMaxValue(list: List<Int>, acc: Int): Int =
-    when {
-        list.isEmpty() -> throw NullPointerException()
-        list.size == 1 -> acc
-        else -> if (list.first() >= acc) {
-            getMaxValue(list.drop(1), list.first())
-        } else {
-            getMaxValue(list.drop(1), acc)
-        }
-    }
+data class Person(val name: String, val age: Int, val single: Boolean)
