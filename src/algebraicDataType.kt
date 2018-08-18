@@ -31,7 +31,3 @@ data class Dog(val name: String, val age: Int)
 enum class Color {
     RED, GREEN, BLUE, PINK
 }
-
-sealed class Option<out T>
-data class Just<T>(val value: T) : Option<T>()
-object None : Option<Nothing>()
