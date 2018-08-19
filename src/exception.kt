@@ -24,7 +24,7 @@ sealed class Maybe<out T> {
     abstract fun <R> map(transformer: (T) -> R): Maybe<R>
 }
 
-data class Just<T>(val value: T) : Maybe<T>() {
+data class Just<out T>(val value: T) : Maybe<T>() {
     override fun <R> map(transformer: (T) -> R): Just<R> = Just(transformer(value))
 }
 
