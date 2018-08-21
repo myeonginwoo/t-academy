@@ -18,15 +18,14 @@ fun main(args: Array<String>) {
 
     println(mutableList) // [4, 5, 6, 10]
 
-    var immutableList: List<Int> = listOf(1, 2, 3)
-    immutableList = listOf(4, 5, 6)
+    val immutableList: List<Int> = listOf(1, 2, 3)
 //    immutableList.add(10)   // Error
 
-    println(immutableList)  // [4, 5, 6]
+    println(immutableList)  // [1, 2, 3]
     immutableList.plus(10)
-    println(immutableList)  // [4, 5, 6]
-    println(immutableList.plus(10))  // [4, 5, 6, 10]
+    println(immutableList)  // [1, 2, 3]
+    println(immutableList.plus(10))  // [1, 2, 3, 10]
     val newList = immutableList.plus(10)
-    println(immutableList)  // [4, 5, 6]
-    println(newList)        // [4, 5, 6, 10]
+    println(immutableList)  // [1, 2, 3]
+    println(newList)        // [1, 2, 3, 10]
 }
