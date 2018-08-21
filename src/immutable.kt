@@ -13,10 +13,9 @@ fun main(args: Array<String>) {
 //    immutableString = "Kotlin"  // Error
 
     var mutableList: MutableList<Int> = mutableListOf(1, 2, 3)
-    mutableList = mutableListOf(4, 5, 6)
     mutableList.add(10)
 
-    println(mutableList) // [4, 5, 6, 10]
+    println(mutableList) // [1, 2, 3, 10]
 
     val immutableList: List<Int> = listOf(1, 2, 3)
 //    immutableList.add(10)   // Error
