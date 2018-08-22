@@ -12,6 +12,9 @@ fun main(args: Array<String>) {
     val multiThree = { x: Int, y: Int, z: Int -> x * y * z }
     println(multiThree(1, 2, 3))    // 6
 
+    val partial2 = multiThree.partialAppliedFunction(1)
+    println(partial2(2, 3)) // 6
+
     val curriedMultiThree = multiThree.curried()
     println(curriedMultiThree(1)(2)(3)) // 6
 
@@ -27,6 +30,10 @@ fun main(args: Array<String>) {
 
 fun <P1, P2, R> ((P1, P2) -> R).partialAppliedFunction(x: P1): (P2) -> R {
     return { p2 -> this(x, p2) }
+}
+
+fun <P1, P2, P3, R> ((P1, P2, P3) -> R).partialAppliedFunction(x: P1): (P2, P3) -> R {
+    return { p2, P3 -> this(x, p2, P3) }
 }
 
 fun <P1, P2, P3, R> ((P1, P2, P3) -> R).curried(): (P1) -> (P2) -> (P3) -> R =
