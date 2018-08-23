@@ -1,8 +1,11 @@
-package practice
+import practice.Cons
+import practice.FpList
+import practice.Nil
 
 fun main(args: Array<String>) {
 
-    val intlist = Cons(1, Cons(2, Cons(3, Cons(4, Cons(5, Nil)))))
+    val intlist = Cons(1,
+        Cons(2, Cons(3, Cons(4, Cons(5, Nil)))))
 
     require(intlist.filter { value -> value % 2 == 0 } ==
         Cons(2, Cons(4, Nil)))
